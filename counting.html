@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Counting Codex — Statistics CTF</title>
+<link rel="stylesheet" href="styles.css">
+<script>
+  MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <nav class="breadcrumb">
+    <a href="index.html">&larr; CTF home</a>
+    <span class="section-pill">Category 02 of 05</span>
+  </nav>
+
+  <main class="container">
+    <header class="section-header">
+      <h1>The Counting <em style="color:var(--red); font-style:italic; font-weight:400;">Codex</em></h1>
+      <p class="lead">Nine challenges built around the counting rules: $k^n$ for equal outcomes, the multiplication rule, factorials, permutations $_nP_r$, and combinations $_nC_r$. Drawn from Week 4.</p>
+    </header>
+
+    <div class="page-progress">
+      <div class="page-progress-label">
+        <span>Progress through this category</span>
+        <span class="count"><span id="progress-text">0 / 9</span> flags captured</span>
+      </div>
+      <div class="page-progress-track"><div id="progress-fill" class="page-progress-fill"></div></div>
+    </div>
+
+    <!-- =========== EASY =========== -->
+    <div class="difficulty-section easy">
+      <span class="level-tag">Easy</span>
+      <h2>Fundamental counts</h2>
+      <span class="pts-info">10 points each</span>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 10</span>
+        <span class="q-points">Easy &middot; 10 pts</span>
+      </div>
+      <h3 class="challenge-title">Six-Toss Saga</h3>
+      <div class="problem-statement">
+        <p>You toss a fair coin <strong>six</strong> times in a row. How many possible <em>sequences</em> of Heads and Tails can result?</p>
+      </div>
+      <div class="answer-area" data-challenge="10"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 11</span>
+        <span class="q-points">Easy &middot; 10 pts</span>
+      </div>
+      <h3 class="challenge-title">Order Up</h3>
+      <div class="problem-statement">
+        <p>The diagram below shows ordered slots being filled from a pool. Read the number of choices available for each slot, multiply them together, and give the total number of <em>ordered</em> arrangements.</p>
+        <figure class="challenge-figure">
+          <img src="fig_q11_perm_slots.png" alt="Three ordered slots showing available choices at each stage, drawn from a pool of 7 items.">
+        </figure>
+      </div>
+      <div class="answer-area" data-challenge="11"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 12</span>
+        <span class="q-points">Easy &middot; 10 pts</span>
+      </div>
+      <h3 class="challenge-title">Factorial Frenzy</h3>
+      <div class="problem-statement">
+        <p>What is $6!$ (six factorial)?</p>
+      </div>
+      <div class="answer-area" data-challenge="12"></div>
+    </div>
+
+    <!-- =========== MEDIUM =========== -->
+    <div class="difficulty-section medium">
+      <span class="level-tag">Medium</span>
+      <h2>Selections and arrangements</h2>
+      <span class="pts-info">20 points each</span>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 13</span>
+        <span class="q-points">Medium &middot; 20 pts</span>
+      </div>
+      <h3 class="challenge-title">Kai Bar Combos</h3>
+      <div class="problem-statement">
+        <p>A kai bar lets you build a lunch pack by choosing one bun and one filling. Count the total number of distinct bun-and-filling combinations shown in the tree diagram below.</p>
+        <figure class="challenge-figure">
+          <img src="fig_q13_tree_combos.png" alt="A tree diagram branching from a Lunch node into bun choices, each splitting into filling choices.">
+        </figure>
+      </div>
+      <div class="answer-area" data-challenge="13"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 14</span>
+        <span class="q-points">Medium &middot; 20 pts</span>
+      </div>
+      <h3 class="challenge-title">Squad Selection</h3>
+      <div class="problem-statement">
+        <p>A coach must choose a squad of <strong>4 players</strong> from a group of <strong>12</strong>. Order does not matter. How many different squads are possible?</p>
+      </div>
+      <div class="answer-area" data-challenge="14"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 15</span>
+        <span class="q-points">Medium &middot; 20 pts</span>
+      </div>
+      <h3 class="challenge-title">Round the Haus</h3>
+      <div class="problem-statement">
+        <p>Six people are to be seated around a circular table. The diagram shows one seat fixed as the reference point. Use the circular-permutation formula to count the distinct seating arrangements for the remaining seats. How many are there?</p>
+        <figure class="challenge-figure">
+          <img src="fig_q15_circular_table.png" alt="Six seats around a round table with one seat marked as fixed.">
+        </figure>
+      </div>
+      <div class="answer-area" data-challenge="15"></div>
+    </div>
+
+    <!-- =========== HARD =========== -->
+    <div class="difficulty-section hard">
+      <span class="level-tag">Hard</span>
+      <h2>Multi-step &amp; dependent counting</h2>
+      <span class="pts-info">30 points each</span>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 16</span>
+        <span class="q-points">Hard &middot; 30 pts</span>
+      </div>
+      <h3 class="challenge-title">No Returns</h3>
+      <div class="problem-statement">
+        <p>Two cards are drawn from a standard 52-card deck <em>without replacement</em>. Using the probability tree below, find the probability that <strong>both cards are red</strong>. Multiply the branch fractions along the correct path. Round to 3 decimal places.</p>
+        <figure class="challenge-figure">
+          <img src="fig_q16_tree_noreplace.png" alt="A two-stage probability tree for drawing two cards without replacement, with branch fractions labelled.">
+        </figure>
+      </div>
+      <div class="answer-area" data-challenge="16"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 17</span>
+        <span class="q-points">Hard &middot; 30 pts</span>
+      </div>
+      <h3 class="challenge-title">PIN Forge</h3>
+      <div class="problem-statement">
+        <p>A 5-digit PIN uses only the digits 0&ndash;9, and <strong>repetition is allowed</strong>. How many different PINs are possible?</p>
+      </div>
+      <div class="answer-area" data-challenge="17"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 18</span>
+        <span class="q-points">Hard &middot; 30 pts</span>
+      </div>
+      <h3 class="challenge-title">Chain Rule</h3>
+      <div class="problem-statement">
+        <p>A student's enrolment satisfies $P(\text{Biology}) = 0.8$ and $P(\text{Algebra} \mid \text{Biology}) = 0.25$.</p>
+        <p>Find $P(\text{Algebra} \cap \text{Biology})$ &mdash; the probability the student takes both. Express as a decimal.</p>
+      </div>
+      <div class="answer-area" data-challenge="18"></div>
+    </div>
+
+    <nav class="section-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:3rem; padding-top:1.5rem; border-top:var(--border-thin);">
+      <a href="probability.html" class="btn-secondary">&larr; Previous</a>
+      <a href="normal.html" class="btn-primary">Next: Bell Curve Bureau &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer>
+    <p>CMN112 / CMP112 / CBS102 &middot; Fundamentals of Statistics &middot; Western Pacific University</p>
+  </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

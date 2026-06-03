@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sampling Station — Statistics CTF</title>
+<link rel="stylesheet" href="styles.css">
+<script>
+  MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <nav class="breadcrumb">
+    <a href="index.html">&larr; CTF home</a>
+    <span class="section-pill">Category 04 of 05</span>
+  </nav>
+
+  <main class="container">
+    <header class="section-header">
+      <h1>Sampling <em style="color:var(--red); font-style:italic; font-weight:400;">Station</em></h1>
+      <p class="lead">Nine challenges on the sampling distribution of $\bar{x}$, the standard error $\sigma_{\bar{x}} = \sigma/\sqrt{n}$, and the Central Limit Theorem. Drawn from Weeks 6-7.</p>
+    </header>
+
+    <div class="page-progress">
+      <div class="page-progress-label">
+        <span>Progress through this category</span>
+        <span class="count"><span id="progress-text">0 / 9</span> flags captured</span>
+      </div>
+      <div class="page-progress-track"><div id="progress-fill" class="page-progress-fill"></div></div>
+    </div>
+
+    <!-- =========== EASY =========== -->
+    <div class="difficulty-section easy">
+      <span class="level-tag">Easy</span>
+      <h2>Foundations</h2>
+      <span class="pts-info">10 points each</span>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 28</span>
+        <span class="q-points">Easy &middot; 10 pts</span>
+      </div>
+      <h3 class="challenge-title">Unbiased Beacon</h3>
+      <div class="problem-statement">
+        <p>A population has mean $\mu = 75$. What is the mean of the sampling distribution of $\bar{x}$, that is $\mu_{\bar{x}}$?</p>
+      </div>
+      <div class="answer-area" data-challenge="28"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 29</span>
+        <span class="q-points">Easy &middot; 10 pts</span>
+      </div>
+      <h3 class="challenge-title">Error Estimator</h3>
+      <div class="problem-statement">
+        <p>A population has standard deviation $\sigma = 30$. For a sample of size $n = 100$, calculate the <em>standard error of the mean.</em></p>
+      </div>
+      <div class="answer-area" data-challenge="29"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 30</span>
+        <span class="q-points">Easy &middot; 10 pts</span>
+      </div>
+      <h3 class="challenge-title">CLT Threshold</h3>
+      <div class="problem-statement">
+        <p>The three panels below show how the sampling distribution of $\bar{x}$ changes as sample size grows. The third panel is labelled $n = ?$. What is the <em>minimum sample size</em> at which the Central Limit Theorem typically lets us treat the sampling distribution of $\bar{x}$ as approximately normal?</p>
+        <figure class="challenge-figure">
+          <img src="fig_q30_clt_convergence.png" alt="Three panels showing a skewed population (n=1), a partly bell-shaped distribution (n=10), and an approximately normal distribution (n=?).">
+        </figure>
+      </div>
+      <div class="answer-area" data-challenge="30"></div>
+    </div>
+
+    <!-- =========== MEDIUM =========== -->
+    <div class="difficulty-section medium">
+      <span class="level-tag">Medium</span>
+      <h2>Applied standard errors</h2>
+      <span class="pts-info">20 points each</span>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 31</span>
+        <span class="q-points">Medium &middot; 20 pts</span>
+      </div>
+      <h3 class="challenge-title">Vendor Spread</h3>
+      <div class="problem-statement">
+        <p>The monthly income of Port Moresby market vendors has population mean $\mu = \text{K}1500$ and standard deviation $\sigma = \text{K}500$. A sample of $n = 100$ vendors is taken.</p>
+        <p>Find the standard error of the sample mean $\sigma_{\bar{x}}$, in Kina.</p>
+      </div>
+      <div class="answer-area" data-challenge="31"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 32</span>
+        <span class="q-points">Medium &middot; 20 pts</span>
+      </div>
+      <h3 class="challenge-title">Data Drift</h3>
+      <div class="problem-statement">
+        <p>The diagram shows a sampling distribution. Read $\mu$ and $\sigma_{\bar{x}}$ from the diagram, and identify where $\bar{x}$ is marked. Then calculate the z-score.</p>
+        <figure class="challenge-figure">
+          <img src="fig_q32_sampling_z.png" alt="A sampling distribution of x-bar with the population mean, standard error, and a marked sample mean labelled on the diagram.">
+        </figure>
+      </div>
+      <div class="answer-area" data-challenge="32"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 33</span>
+        <span class="q-points">Medium &middot; 20 pts</span>
+      </div>
+      <h3 class="challenge-title">Size Matters</h3>
+      <div class="problem-statement">
+        <p>The diagram illustrates how the spread of a sampling distribution changes with sample size. A population has $\sigma = 12$. For a sample of size $n = 36$, calculate the standard error.</p>
+        <figure class="challenge-figure">
+          <img src="fig_q33_se_vs_n.png" alt="Three overlapping sampling-distribution curves becoming narrower as sample size increases from small to large.">
+        </figure>
+      </div>
+      <div class="answer-area" data-challenge="33"></div>
+    </div>
+
+    <!-- =========== HARD =========== -->
+    <div class="difficulty-section hard">
+      <span class="level-tag">Hard</span>
+      <h2>Applying the CLT to probability</h2>
+      <span class="pts-info">30 points each</span>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 34</span>
+        <span class="q-points">Hard &middot; 30 pts</span>
+      </div>
+      <h3 class="challenge-title">PMV Patrol</h3>
+      <div class="problem-statement">
+        <p>Daily fare collections on a Lae PMV route are <strong>not normally distributed</strong>, with $\mu = \text{K}480$ and $\sigma = \text{K}90$. A researcher samples $n = 36$ days.</p>
+        <p>Find $\sigma_{\bar{x}}$, in Kina.</p>
+      </div>
+      <div class="answer-area" data-challenge="34"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 35</span>
+        <span class="q-points">Hard &middot; 30 pts</span>
+      </div>
+      <h3 class="challenge-title">Fare Window</h3>
+      <div class="problem-statement">
+        <p>The diagram shows a sampling distribution. Read $\mu$ and $\sigma_{\bar{x}}$ from the diagram, then identify the lower and upper boundaries of the shaded region. Compute the z-scores and find the probability of the shaded region. Round to 4 decimal places.</p>
+        <figure class="challenge-figure">
+          <img src="fig_q35_sampling_between.png" alt="A sampling distribution with a central shaded region. The mean, standard error, and boundary values are labelled on the axis.">
+        </figure>
+      </div>
+      <div class="answer-area" data-challenge="35"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 36</span>
+        <span class="q-points">Hard &middot; 30 pts</span>
+      </div>
+      <h3 class="challenge-title">Cocoa Check</h3>
+      <div class="problem-statement">
+        <p>A Kokopo cocoa plant fills dried-bean bags with weight $\mu = 62$ kg and $\sigma = 6$ kg. For a sample of $n = 64$ bags, find the standard error $\sigma_{\bar{x}}$, in kg.</p>
+      </div>
+      <div class="answer-area" data-challenge="36"></div>
+    </div>
+
+    <nav class="section-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:3rem; padding-top:1.5rem; border-top:var(--border-thin);">
+      <a href="normal.html" class="btn-secondary">&larr; Previous</a>
+      <a href="regression.html" class="btn-primary">Next: The Regression Engine &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer>
+    <p>CMN112 / CMP112 / CBS102 &middot; Fundamentals of Statistics &middot; Western Pacific University</p>
+  </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Regression Engine — Statistics CTF</title>
+<link rel="stylesheet" href="styles.css">
+<script>
+  MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] }, svg: { fontCache: 'global' } };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="page-wrapper">
+
+  <nav class="breadcrumb">
+    <a href="index.html">&larr; CTF home</a>
+    <span class="section-pill">Category 05 of 05</span>
+  </nav>
+
+  <main class="container">
+    <header class="section-header">
+      <h1>The Regression <em style="color:var(--red); font-style:italic; font-weight:400;">Engine</em></h1>
+      <p class="lead">Nine challenges on linear regression: line of best fit, Pearson correlation $r$, coefficient of determination $R^2$, and testing the significance of the slope. Drawn from Weeks 11-12.</p>
+    </header>
+
+    <div class="page-progress">
+      <div class="page-progress-label">
+        <span>Progress through this category</span>
+        <span class="count"><span id="progress-text">0 / 9</span> flags captured</span>
+      </div>
+      <div class="page-progress-track"><div id="progress-fill" class="page-progress-fill"></div></div>
+    </div>
+
+    <!-- =========== EASY =========== -->
+    <div class="difficulty-section easy">
+      <span class="level-tag">Easy</span>
+      <h2>Reading regression equations</h2>
+      <span class="pts-info">10 points each</span>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 37</span>
+        <span class="q-points">Easy &middot; 10 pts</span>
+      </div>
+      <h3 class="challenge-title">Read the Rate</h3>
+      <div class="problem-statement">
+        <p>The diagram shows a line of best fit for a tutor's earnings model. Read the two points and determine the <em>slope</em> $m$.</p>
+        <figure class="challenge-figure">
+          <img src="fig_q37_line.png" alt="A straight line on earnings vs hours axes with a right-angle triangle showing the rise and run. The run value is labelled; the rise is not.">
+        </figure>
+      </div>
+      <div class="answer-area" data-challenge="37"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 38</span>
+        <span class="q-points">Easy &middot; 10 pts</span>
+      </div>
+      <h3 class="challenge-title">Find the Floor</h3>
+      <div class="problem-statement">
+        <p>For the line of best fit $\hat{y} = 5.2x + 38.5$, what is the $y$-intercept?</p>
+      </div>
+      <div class="answer-area" data-challenge="38"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 39</span>
+        <span class="q-points">Easy &middot; 10 pts</span>
+      </div>
+      <h3 class="challenge-title">Square Deal</h3>
+      <div class="problem-statement">
+        <p>For a regression, Pearson's $r = 0.8$. What is the coefficient of determination $R^2$?</p>
+      </div>
+      <div class="answer-area" data-challenge="39"></div>
+    </div>
+
+    <!-- =========== MEDIUM =========== -->
+    <div class="difficulty-section medium">
+      <span class="level-tag">Medium</span>
+      <h2>Predictions, slope, and interpretation</h2>
+      <span class="pts-info">20 points each</span>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 40</span>
+        <span class="q-points">Medium &middot; 20 pts</span>
+      </div>
+      <h3 class="challenge-title">Predict &amp; Win</h3>
+      <div class="problem-statement">
+        <p>Use the regression equation $\hat{y} = 5.2x + 38.5$ to predict the exam score for the student marked in red on the scatter plot. The marked point lies on the line at a specific $x$-value — read that $x$-value from the diagram, substitute it into the equation, and give $\hat{y}$ to 2 decimal places.</p>
+        <figure class="challenge-figure">
+          <img src="fig_q40_scatter_line.png" alt="A scatter plot of study hours versus exam score with a line of best fit. A red point marks the prediction to find, with only the x-value labelled.">
+        </figure>
+      </div>
+      <div class="answer-area" data-challenge="40"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 41</span>
+        <span class="q-points">Medium &middot; 20 pts</span>
+      </div>
+      <h3 class="challenge-title">Slope Machine</h3>
+      <div class="problem-statement">
+        <p>From a regression problem you have the column sums:</p>
+        <p class="problem-display">$n = 5, \quad \textstyle\sum x = 15, \quad \sum y = 40, \quad \sum xy = 146, \quad \sum x^2 = 55$</p>
+        <p>Calculate the slope $m = \dfrac{n\sum xy - \sum x \sum y}{n\sum x^2 - (\sum x)^2}$. Round to 2 decimal places.</p>
+      </div>
+      <div class="answer-area" data-challenge="41"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 42</span>
+        <span class="q-points">Medium &middot; 20 pts</span>
+      </div>
+      <h3 class="challenge-title">Strength Read</h3>
+      <div class="problem-statement">
+        <p>For a regression of network response time on the number of concurrent users, Pearson's $r = -0.93$. The diagram shows five scatter panels at different correlation values. Identify which panel best matches $r = -0.93$, then describe the <strong>strength and direction</strong> of the relationship in two words (for example, "weak positive").</p>
+        <figure class="challenge-figure">
+          <img src="fig_q42_correlation_panels.png" alt="Five scatter panels labelled with different r values from negative one to positive one. No panel is labelled strong negative.">
+        </figure>
+      </div>
+      <div class="answer-area" data-challenge="42"></div>
+    </div>
+
+    <!-- =========== HARD =========== -->
+    <div class="difficulty-section hard">
+      <span class="level-tag">Hard</span>
+      <h2>Full Pearson $r$ &amp; significance testing</h2>
+      <span class="pts-info">30 points each</span>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 43</span>
+        <span class="q-points">Hard &middot; 30 pts</span>
+      </div>
+      <h3 class="challenge-title">Pearson's Prize</h3>
+      <div class="problem-statement">
+        <p>For the same dataset as Challenge 41, the column sums (now including $\sum y^2$) are:</p>
+        <p class="problem-display">$n = 5, \quad \textstyle\sum x = 15, \quad \sum y = 40, \quad \sum xy = 146, \quad \sum x^2 = 55, \quad \sum y^2 = 400$</p>
+        <p>Calculate Pearson's correlation coefficient
+        $r = \dfrac{n\sum xy - \sum x \sum y}{\sqrt{[\,n\sum x^2 - (\sum x)^2\,][\,n\sum y^2 - (\sum y)^2\,]}}$. Round to 3 decimal places.</p>
+      </div>
+      <div class="answer-area" data-challenge="43"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 44</span>
+        <span class="q-points">Hard &middot; 30 pts</span>
+      </div>
+      <h3 class="challenge-title">T-Time</h3>
+      <div class="problem-statement">
+        <p>For a regression slope test, the sample slope is $m = 2.6$ with standard error $\text{SE}(m) = 0.40$.</p>
+        <p>Calculate the test statistic $t = \dfrac{m}{\text{SE}(m)}$. Round to 2 decimal places.</p>
+      </div>
+      <div class="answer-area" data-challenge="44"></div>
+    </div>
+
+    <div class="question">
+      <div class="q-header">
+        <span class="q-num">Challenge 45</span>
+        <span class="q-points">Hard &middot; 30 pts</span>
+      </div>
+      <h3 class="challenge-title">The Verdict</h3>
+      <div class="problem-statement">
+        <p>The diagram shows a t-distribution with critical values marked and a test statistic indicated by an arrow. Read where the test statistic falls relative to the rejection regions. At $\alpha = 0.05$ two-tailed with $df = 3$, what is the decision about $H_0$? Type your answer in.</p>
+        <figure class="challenge-figure">
+          <img src="fig_q45_tdist_critical.png" alt="A t-distribution with two red rejection-region tails and critical values marked on the x-axis. A test statistic is marked with an arrow.">
+        </figure>
+      </div>
+      <div class="answer-area" data-challenge="45"></div>
+    </div>
+
+    <nav class="section-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:3rem; padding-top:1.5rem; border-top:var(--border-thin);">
+      <a href="sampling.html" class="btn-secondary">&larr; Previous</a>
+      <a href="index.html" class="btn-primary">Back to home &rarr;</a>
+    </nav>
+
+    <section class="rules-block" style="margin-top:3rem; transform:rotate(0.3deg); border-color: var(--green); box-shadow: 6px 6px 0 var(--green);">
+      <h2 style="color: var(--ink);">You've reached the end</h2>
+      <p style="font-size:1rem; line-height:1.65; margin: 1rem 0 0;">
+        Make sure every flag you captured has been pasted into <strong>CTFd</strong> before the timer expires.
+        The scoreboard locks at the end of the hour and prizes will be awarded to the top three.
+        <strong>Well done for making it through a tough semester.</strong>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>CMN112 / CMP112 / CBS102 &middot; Fundamentals of Statistics &middot; Western Pacific University</p>
+  </footer>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

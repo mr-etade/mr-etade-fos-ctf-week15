@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fundamentals of Statistics — End-of-Semester CTF</title>
+<link rel="stylesheet" href="styles.css">
+<script>
+  MathJax = {
+    tex: { inlineMath: [['$', '$'], ['\\(', '\\)']], displayMath: [['$$', '$$'], ['\\[', '\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body>
+<div class="page-wrapper">
+  <header class="hero">
+    <div class="hero-bubbles" aria-hidden="true">
+      <span class="bubble b1"></span>
+      <span class="bubble b2"></span>
+      <span class="bubble b3"></span>
+      <span class="bubble b4"></span>
+      <span class="bubble b5"></span>
+    </div>
+    <div class="hero-content">
+      <p class="eyebrow">End-of-Semester Event &middot; Thursday 4 June 2026</p>
+      <h1>Capture the <span class="em">Flag</span></h1>
+      <p class="subtitle">Fundamentals of Statistics &mdash; 45 flags across 5 categories</p>
+      <p class="hero-note">A one-hour statistics challenge. Solve each problem, enter your answer here, and a flag will reveal &mdash; copy it and submit on CTFd to score the points. Prizes for 1st, 2nd, and 3rd place.</p>
+    </div>
+  </header>
+
+  <main class="container">
+
+    <!-- ==================== CTFd ACCESS ==================== -->
+    <section class="ctfd-panel">
+      <span class="ctfd-panel-eyebrow">Flag Submission Platform</span>
+      <h2>Submit your captured flags on CTFd</h2>
+      <div class="ctfd-url-box">http://139.180.180.165/</div>
+      <p class="ctfd-panel-note">
+        This is the CTFd address (also written on the <strong>whiteboard</strong> at the start of the event).
+        Open it in your browser, register an account, and paste in the flag you capture from each challenge here.
+        Your live ranking will be visible on the scoreboard.
+      </p>
+    </section>
+
+    <!-- ==================== HOW IT WORKS ==================== -->
+    <section>
+      <h2>How this works</h2>
+      <div class="how-to-grid">
+        <div class="how-card">
+          <div class="how-num">1</div>
+          <p>Pick a category. Read the challenge and work it out in your exercise book.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-num">2</div>
+          <p>Enter your answer in the input box. Fractions like <code>1/6</code> and decimals like <code>0.1667</code> are both accepted.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-num">3</div>
+          <p>Press <strong>Check Answer</strong>. Correct &rarr; flag reveals. Wrong &rarr; try again with no penalty.</p>
+        </div>
+        <div class="how-card">
+          <div class="how-num">4</div>
+          <p>Copy the flag and paste it into the matching challenge on CTFd to score the points.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== RULES ==================== -->
+    <section class="rules-block">
+      <h2>Rules</h2>
+      <ol class="rules-list">
+        <li><strong>Event length:</strong> one hour. The CTFd scoreboard locks the moment the timer ends.</li>
+        <li><strong>Five categories.</strong> Each holds nine challenges &mdash; three easy, three medium, three hard.</li>
+        <li><strong>Points:</strong> easy = 10, medium = 20, hard = 30. Total possible: <strong>900 points</strong>.</li>
+        <li><strong>Flag format:</strong> every flag looks like <code>FOS{...}</code>. Case-sensitive, lowercase, underscores instead of spaces.</li>
+        <li><strong>Tackle the easy ones first.</strong> Build a score, then move up the difficulty ladder. You don't need to solve every challenge to win.</li>
+        <li><strong>Work alone.</strong> Discussion, sharing flags, or screen-peeking is not allowed. Calculators &mdash; including a $z$-table on your phone or printed &mdash; are fine.</li>
+        <li><strong>Ties</strong> are broken by who reached the score first on CTFd.</li>
+        <li><strong>This site saves progress.</strong> If you accidentally refresh, the flags you've already captured stay revealed.</li>
+      </ol>
+    </section>
+
+    <!-- ==================== CATEGORIES ==================== -->
+    <section>
+      <h2>Choose a category</h2>
+      <div class="section-grid">
+
+        <a class="section-card" href="probability.html">
+          <span class="category-eyebrow">Category 01 &middot; Weeks 2-3</span>
+          <div class="card-icon">
+            <svg viewBox="0 0 60 60" aria-hidden="true">
+              <rect x="14" y="14" width="32" height="32" fill="none" stroke="currentColor" stroke-width="3" rx="4"/>
+              <circle cx="22" cy="22" r="2.5" fill="currentColor"/>
+              <circle cx="38" cy="22" r="2.5" fill="currentColor"/>
+              <circle cx="30" cy="30" r="2.5" fill="currentColor"/>
+              <circle cx="22" cy="38" r="2.5" fill="currentColor"/>
+              <circle cx="38" cy="38" r="2.5" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>Probability Protocol</h3>
+          <p>Foundational probability, joint &amp; marginal distributions, conditional probability and independence.</p>
+          <div class="pts-tally">
+            <span>9 challenges</span>
+            <strong>180 pts</strong>
+          </div>
+        </a>
+
+        <a class="section-card" href="counting.html">
+          <span class="category-eyebrow">Category 02 &middot; Week 4</span>
+          <div class="card-icon">
+            <svg viewBox="0 0 60 60" aria-hidden="true">
+              <text x="10" y="38" font-family="Fraunces, serif" font-weight="900" font-size="26" fill="currentColor">n!</text>
+              <text x="34" y="26" font-family="Fraunces, serif" font-weight="900" font-size="16" fill="currentColor">P</text>
+              <text x="44" y="38" font-family="Fraunces, serif" font-weight="900" font-size="16" fill="currentColor">C</text>
+            </svg>
+          </div>
+          <h3>The Counting Codex</h3>
+          <p>Counting rules, factorial arrangements, permutations, combinations, and applied counting problems.</p>
+          <div class="pts-tally">
+            <span>9 challenges</span>
+            <strong>180 pts</strong>
+          </div>
+        </a>
+
+        <a class="section-card" href="normal.html">
+          <span class="category-eyebrow">Category 03 &middot; Week 5</span>
+          <div class="card-icon">
+            <svg viewBox="0 0 60 60" aria-hidden="true">
+              <path d="M 6 48 Q 18 48 22 36 Q 28 12 30 12 Q 32 12 38 36 Q 42 48 54 48" fill="none" stroke="currentColor" stroke-width="2.5"/>
+              <line x1="6" y1="48" x2="54" y2="48" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="30" y1="14" x2="30" y2="48" stroke="currentColor" stroke-width="1" stroke-dasharray="2,2"/>
+            </svg>
+          </div>
+          <h3>Bell Curve Bureau</h3>
+          <p>Normal distribution, the empirical rule, z-scores, and using the z-table to find probabilities.</p>
+          <div class="pts-tally">
+            <span>9 challenges</span>
+            <strong>180 pts</strong>
+          </div>
+        </a>
+
+        <a class="section-card" href="sampling.html">
+          <span class="category-eyebrow">Category 04 &middot; Weeks 6-7</span>
+          <div class="card-icon">
+            <svg viewBox="0 0 60 60" aria-hidden="true">
+              <circle cx="14" cy="14" r="4" fill="currentColor" opacity="0.4"/>
+              <circle cx="14" cy="30" r="4" fill="currentColor" opacity="0.6"/>
+              <circle cx="14" cy="46" r="4" fill="currentColor" opacity="0.8"/>
+              <path d="M 22 14 L 38 30 M 22 30 L 38 30 M 22 46 L 38 30" stroke="currentColor" stroke-width="1.5"/>
+              <text x="42" y="35" font-family="Fraunces, serif" font-weight="800" font-style="italic" font-size="18" fill="currentColor">x&#772;</text>
+            </svg>
+          </div>
+          <h3>Sampling Station</h3>
+          <p>Sampling distributions, the standard error of the mean, and applying the Central Limit Theorem.</p>
+          <div class="pts-tally">
+            <span>9 challenges</span>
+            <strong>180 pts</strong>
+          </div>
+        </a>
+
+        <a class="section-card" href="regression.html">
+          <span class="category-eyebrow">Category 05 &middot; Weeks 11-12</span>
+          <div class="card-icon">
+            <svg viewBox="0 0 60 60" aria-hidden="true">
+              <line x1="10" y1="50" x2="10" y2="10" stroke="currentColor" stroke-width="2"/>
+              <line x1="10" y1="50" x2="52" y2="50" stroke="currentColor" stroke-width="2"/>
+              <line x1="10" y1="46" x2="52" y2="14" stroke="currentColor" stroke-width="2.5"/>
+              <circle cx="16" cy="42" r="2" fill="currentColor"/>
+              <circle cx="24" cy="38" r="2" fill="currentColor"/>
+              <circle cx="32" cy="30" r="2" fill="currentColor"/>
+              <circle cx="40" cy="22" r="2" fill="currentColor"/>
+              <circle cx="48" cy="18" r="2" fill="currentColor"/>
+            </svg>
+          </div>
+          <h3>The Regression Engine</h3>
+          <p>Line of best fit, Pearson's $r$, coefficient of determination $R^2$, and slope significance testing.</p>
+          <div class="pts-tally">
+            <span>9 challenges</span>
+            <strong>180 pts</strong>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- ==================== CLOSING NOTE ==================== -->
+    <section class="rules-block" style="transform:rotate(0.4deg);">
+      <h2>A note before you start</h2>
+      <p style="font-size:1rem; line-height:1.65; margin: 1rem 0 0;">
+        Every challenge is solvable using only what we have covered in lectures this semester &mdash;
+        Weeks 2 through 12. No tricks. <em style="color:var(--red); font-weight:600;">Read the question carefully</em>,
+        do your working out on paper, and double-check before pressing <strong>Check Answer</strong>.
+        You can try as many times as you like &mdash; only the flag matters on CTFd.
+        <strong>Pace yourself. Breathe. Have fun.</strong>
+      </p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>CMN112 / CMP112 / CBS102 &middot; Fundamentals of Statistics &middot; Western Pacific University &middot; June 2026</p>
+  </footer>
+</div>
+</body>
+</html>
